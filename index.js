@@ -29,6 +29,9 @@ const epoxyDistPath = path.join(
   "dist",
 );
 const PORT = process.env.PORT || 8080;
+server.listen(port, () => {
+  console.log(`Running on port ${port}`);
+});
 const cache = new Map();
 const CACHE_TTL = 30 * 24 * 60 * 60 * 1000; // Cache for 30 Days
 
