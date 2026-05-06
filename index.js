@@ -121,6 +121,8 @@ app.use(express.static(path.join(__dirname, "static")));
 app.use("/ca", cors({ origin: true }));
 app.use("/bm", express.static(baremuxPath, transportStaticOptions));
 app.use("/ep", express.static(epoxyDistPath, transportStaticOptions));
+app.use("/bare/", bareServer);
+app.use(express.static("public"));
 
 const routes = [
   { path: "/b", file: "apps.html" },
